@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom"
 // import reactLogo from "./assets/react.svg"
-import Cabecalho from "./components/cabecalho"
+import Menu from "./components/menu"
+import Rodape from "./components/rodape"
+import "./App.css"
 // import Conteudo from "./components/contudo"
 // import Conteudo from "./components/rodape"
 
@@ -18,8 +20,9 @@ export default function App() {
 
   return (
     <>
-      <Cabecalho/>
+      <Menu/>
       <Outlet/>
+      <Rodape/>
     </>
   )
 }
