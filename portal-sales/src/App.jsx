@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Outlet } from "react-router-dom"
+// import reactLogo from "./assets/react.svg"
+import Cabecalho from "./components/cabecalho"
+// import Conteudo from "./components/contudo"
+// import Conteudo from "./components/rodape"
 
-function App() {
-  const [count, setCount] = useState(0)
+      // {/* Área imperativa */}
+      // <div>
+      //   {/* um cabeçalho Header, um h1, uma lista ul com 3 itens com 3 links */}
+      //   <Cabecalho/>
+      //   {/* uma seção com uma div com 3 paragrafos, com 3 linhas de lorem uma imagem */}
+      //   <Conteudo reactLogoProps = {reactLogo}  reactLogoTextoAltPropos = {reactLogoTextoAlt}/>
+      //   {/* <Rodape/> */}
+      // </div>
+export default function App() {
+  // Área declarativa
+  let reactLogoTextoAlt = "Logo React"
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Cabecalho/>
+      <Outlet/>
     </>
   )
 }
-
-export default App
