@@ -1,7 +1,9 @@
 import { Outlet } from "react-router-dom"
 // import reactLogo from "./assets/react.svg"
-import Menu from "./components/menu"
+
+
 import Rodape from "./components/rodape"
+import Menu from "./components/menu/index.jsx"
 import "./App.css"
 // import Conteudo from "./components/contudo"
 // import Conteudo from "./components/rodape"
