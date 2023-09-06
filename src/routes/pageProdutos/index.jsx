@@ -42,7 +42,7 @@ export default function Produtos(){
                 </table>
             </div>
             <main>
-                <h1>PRODUTOS</h1>
+                <h3>PRODUTOS</h3>
             </main>
         </>
     );
