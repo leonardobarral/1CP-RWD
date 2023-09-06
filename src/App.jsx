@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom"
 
 
 import Rodape from "./components/rodape"
-import Menu from "./components/menu/index.jsx"
+import Menu from "./components/menu"
 import "./App.css"
 // import Conteudo from "./components/contudo"
 // import Conteudo from "./components/rodape"

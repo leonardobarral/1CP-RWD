@@ -3,7 +3,7 @@ export default function Rodape(props){
         <>
 
             <footer>
-                <p>Rodape</p>
+                <p>Rodapé</p>
             </footer>
 
         </>

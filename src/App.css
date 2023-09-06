@@ -13,3 +13,7 @@ nav{
   align-items: center; height: 5vh;
   background-color: darkblue;
   }
+
+  footer p{
+    color: #ffffff;
+  }
