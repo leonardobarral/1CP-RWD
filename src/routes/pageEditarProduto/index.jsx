@@ -36,7 +36,7 @@ export default function EditarProduto(){
             }
         });
         ListaProdutos.splice(indice,1,produto);
-        alert(`Produto editado com sucesso!`);
+        // alert(`Produto editado com sucesso!`);
         navegacao("/produtos"); 
     }
 
@@ -70,12 +70,12 @@ export default function EditarProduto(){
                                 <input type="text" name = "desc" id="idDesc" onChange={handleChange}  defaultValue={produto.desc}/>
                             </div>
                             <div>
-                                <label htmlFor="idPreco">Descrição do produto</label>
+                                <label htmlFor="idPreco">Preço do produto</label>
                                 <input type="text" name = "preco" id="idPreco"  onChange={handleChange} defaultValue={produto.preco}/>
                             </div>
-                            {/* <button onClick="submit">Salvar</button> */}
-                            <button>Salvar</button>
                             <button onClick={cancelar}>Cancelar</button>
+                            <button onClick="submit">Salvar</button>
+                            {/* <button>Salvar</button> */}
                         </fieldset>
                     </form>
                 </div>
