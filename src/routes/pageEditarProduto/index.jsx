@@ -1,49 +1,85 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ListaProdutos } from "../../components/listaProdutos";
 import { useState } from "react";
 
 
 export default function EditarProduto(){
+   
+    // Utizando o Navigate para mudar de página
+    const navegacao = useNavigate();
     
     //Utilizando o HOOK useParams() para recuperar o ID passado no path
-    const {id} = useParams();
+    const { id } = useParams();
 
-    const prondutoRetornado = ListaProdutos.filter(produto => produto.id == id);
+    const produtoRetornado = ListaProdutos.filter(produto => produto.id == id)[0];
     
-    //useState()
-    const [produto,setProduto] = useState("NOME");
+    //useState() - Intancio o item buscado na lista em um contexto local
+    const [produto, setProduto] = useState({
+        id: produtoRetornado.id,
+        nome: produtoRetornado.nome,
+        desc: produtoRetornado.desc,
+        preco: produtoRetornado.preco,
+        img: produtoRetornado.img
+    });
 
+    const handleChange = (event) =>{
+        const{name,value} = event.target;
+        setProduto({...produto,[name]:value})
+    }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        let indice;
+        ListaProdutos.forEach((item,index) => {
+            if(item.id == id){
+                indice = index
+            }
+        });
+        ListaProdutos.splice(indice,1,produto);
+        alert(`Produto editado com sucesso!`);
+        navegacao("/produtos"); 
+    }
 
-    document.title = "EDITAR PRODUTOS " + id;
+    const cancelar = () => {
+        return navegacao("/produtos")
+    }
+
+    document.title = "Edt. Produto " + id;
+
+    // <h1>EDITANDO PRODUTO</h1>
     return(
-        <>
-            <main>
-                <h1>EDITANDO PRODUTO</h1>
-                <p>Valor do state = {produto}</p>
-
-                <button onClick={()=>{setProduto("Joaquin gosta de xuxu!!")}}>Mudar o State</button>
-                <p>Objeto selecionado: {prondutoRetornado[0].nome}</p>
-                <form>
-                    <fieldset>
-                        <legend>Produto Selecionado</legend>
-                        <input type="hidden" name="id" defaultValue={prondutoRetornado[0].id}/>
-                        <div>
-                            <label htmlFor="idProduto">Nome do produto</label>
-                            <input type="text" name = "nome" id="idProd" defaultValue={prondutoRetornado[0].nome}/>
-                        </div>
-                        <div>
-                            <label htmlFor="idDesc">Descrição</label>
-                            <input type="text" name = "desc" id="idDesc" defaultValue={prondutoRetornado[0].desc}/>
-                        </div>
-                        <div>
-                            <label htmlFor="idPreco">Descrição do produto</label>
-                            <input type="text" name = "preco" id="idPreco" defaultValue={prondutoRetornado[0].preco}/>
-                        </div>
-                        <button>EDITAR</button>
-                    </fieldset>
-                </form>
-            </main>
+        <>  
+            <div>
+                <h1>Editar Produto</h1>
+                <div>
+                    <p>Nome : {produto.nome}</p>
+                    <p>Desc : {produto.desc}</p>
+                    <p>Preço : {produto.preco}</p>
+                </div>
+                <div>
+                    <form onSubmit={handleSubmit}>
+                        <fieldset>
+                                <legend>Produto Selecionado</legend>
+                                <input type="hidden" name="id" ondefaultValue={produto.id}/>
+                            <div>
+                                <label htmlFor="idProduto">Nome do produto</label>
+                                <input type="text" name = "nome" id="idProd"  onChange={handleChange} defaultValue={produto.nome}/>
+                            </div>
+                            <div>
+                                <label htmlFor="idDesc">Descrição</label>
+                                <input type="text" name = "desc" id="idDesc" onChange={handleChange}  defaultValue={produto.desc}/>
+                            </div>
+                            <div>
+                                <label htmlFor="idPreco">Descrição do produto</label>
+                                <input type="text" name = "preco" id="idPreco"  onChange={handleChange} defaultValue={produto.preco}/>
+                            </div>
+                            {/* <button onClick="submit">Salvar</button> */}
+                            <button>Salvar</button>
+                            <button onClick={cancelar}>Cancelar</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
         </>
     );
 }
