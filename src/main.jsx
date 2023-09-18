@@ -21,8 +21,7 @@ const router = createBrowserRouter([
       {path : "/produtos", element: <Produtos/>},
       {path : "/editar/produto/:id", element: <EditarProduto/>},
       {path : "/excluir/produto/:id", element: <ExcluirProduto/>},
-      // {path : "/excluir/produto/:id", element: <Navigate to = "/" />},
-      {path : "/incluir/produto/:id", element: <IncluirProduto/>}
+      {path : "/incluir/produto/", element: <IncluirProduto/>}
     ]
 
   }

@@ -2,33 +2,27 @@ import { ListaProdutos } from "../../components/listaProdutos";
 import { Link } from "react-router-dom";
 import {AiOutlineDelete as Excluir, AiFillEdit as Editar} from "react-icons/ai";
 import "./pageProdutos.css"
-// import { useEffect } from "react";
-
-
+import { useEffect,useState } from "react";
 
 export default function Produtos(){
+
     document.title = "Lista de Produtos"
 
-    // const [exemplo, setExemplo] = useEffect([{}]);
-    // const [count, setCount] = useEffect(0);
+    const [exemplo, setExemplo] = useState([{}]);
+    const [count, setCount] = useState(0);
 
+    useEffect(()=>{
+      console.log("Use-Effect que será sempre renderizado!");
+    });
 
-    // useEfect(()=>{
-    //     console.log("Use-Effect que será rederizado apenas 1 vez");
+    useEffect(()=>{
+      console.log("Use-Effect que será renderizado apenas 1 vez!");
+        setExemplo(ListaProdutos);
+    },[]);
 
-    //     setExemplo(ListaProdutos)
-
-    // },[])
-
-    // useEffect(()=>{
-    //     console.log("Use-Effect que será sempre");
-    // })
-
-    // useEffect(()=>{
-    //     console.log("Use-Effect que será rederizado quando o objeto, componente ou elemento que está no array dependênica sofrer atualização");
-    // },[])
-
-
+    useEffect(()=>{
+      console.log("Use-Effect que será renderizado o objeto ou componente ou elemento que está no array de depenências sofrer atualização.");
+    },[count]);
 
     return(
         <>
@@ -65,9 +59,7 @@ export default function Produtos(){
                         <tr>
                             <td colSpan ="5">Total de produtos: {ListaProdutos.length}</td>
                             <td colSpan ="1">
-                                <td>
-                                    <Link to={`/incluir/produto/${ListaProdutos.length + 1}`}>Incluir Produto</Link>
-                                </td>
+                                <Link to={`/incluir/produto`}>Incluir Produto</Link>
                             </td>
                         </tr>
                     </tfoot>

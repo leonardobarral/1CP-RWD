@@ -60,22 +60,21 @@ export default function EditarProduto(){
                     <form onSubmit={handleSubmit}>
                         <fieldset>
                                 <legend>Produto Selecionado</legend>
-                                <input type="hidden" name="id" ondefaultValue={produto.id}/>
+                                <input type="hidden" name="id" value={produto.id}/>
                             <div>
                                 <label htmlFor="idProduto">Nome do produto</label>
-                                <input type="text" name = "nome" id="idProd"  onChange={handleChange} defaultValue={produto.nome}/>
+                                <input type="text" name = "nome" id="idProd"  onChange={handleChange} value={produto.nome}/>
                             </div>
                             <div>
                                 <label htmlFor="idDesc">Descrição</label>
-                                <input type="text" name = "desc" id="idDesc" onChange={handleChange}  defaultValue={produto.desc}/>
+                                <input type="text" name = "desc" id="idDesc" onChange={handleChange}  value={produto.desc}/>
                             </div>
                             <div>
                                 <label htmlFor="idPreco">Preço do produto</label>
-                                <input type="text" name = "preco" id="idPreco"  onChange={handleChange} defaultValue={produto.preco}/>
+                                <input type="text" name = "preco" id="idPreco"  onChange={handleChange} value={produto.preco}/>
                             </div>
                             <button onClick={cancelar}>Cancelar</button>
-                            <button onClick="submit">Salvar</button>
-                            {/* <button>Salvar</button> */}
+                            <button>Salvar</button>
                         </fieldset>
                     </form>
                 </div>

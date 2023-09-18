@@ -5,7 +5,7 @@ export default function ExcluirProduto(){
 
     document.title = "Exclusão Produto"
     const {id} = useParams();
-    const navegacao= useNavigate();
+    const navegacao = useNavigate();
 
     const produto = ListaProdutos.filter((item)=>item.id == id)[0];
 
@@ -16,7 +16,7 @@ export default function ExcluirProduto(){
     }
     
     const cancelar = () => {
-        return navegacao("/produtos")
+        return navegacao("/produtos/")
     }
 
     const editar = ()=>{

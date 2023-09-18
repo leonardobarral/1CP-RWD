@@ -15,7 +15,7 @@ export default function Menu(){
                 <span> | </span>
                 <Link to="/excluir/produto/1">Excluir Produto</Link>
                 <span> | </span>
-                <Link to={`/incluir/produto/${ListaProdutos.length+1}`}>Incluir Produto</Link>
+                <Link to={`/incluir/produto/`}>Incluir Produto</Link>
             </nav>
 
         </>
