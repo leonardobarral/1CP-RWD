@@ -8,19 +8,10 @@ export default function Produtos(){
 
     document.title = "Lista de Produtos"
 
-    const [exemplo, setExemplo] = useState([{}]);
-    const [count, setCount] = useState(0);
+    
 
     useEffect(()=>{
-      console.log("Use-Effect que será sempre renderizado!");
-    });
-
-    useEffect(()=>{
-      console.log("Use-Effect que será renderizado apenas 1 vez!");
-        setExemplo(ListaProdutos);
-    },[]);
-
-    useEffect(()=>{
+        setExemplo(ListaProdutos)
       console.log("Use-Effect que será renderizado o objeto ou componente ou elemento que está no array de depenências sofrer atualização.");
     },[count]);
 
@@ -69,3 +60,20 @@ export default function Produtos(){
         </>
     );
 }
+
+
+    // const [exemplo, setExemplo] = useState([{}]);
+    // const [count, setCount] = useState(0);
+
+    // useEffect(()=>{
+    //   console.log("Use-Effect que será sempre renderizado!");
+    // });
+
+    // useEffect(()=>{
+    //   console.log("Use-Effect que será renderizado apenas 1 vez!");
+    //     setExemplo(ListaProdutos);
+    // },[]);
+
+    // useEffect(()=>{
+    //   console.log("Use-Effect que será renderizado o objeto ou componente ou elemento que está no array de depenências sofrer atualização.");
+    // },[count]);
