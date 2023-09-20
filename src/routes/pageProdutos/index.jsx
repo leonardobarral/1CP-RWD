@@ -8,12 +8,29 @@ export default function Produtos(){
 
     document.title = "Lista de Produtos"
 
-    
+    const [listaProdutoLocal, setListaProdutoLocal] = useState([{}])
 
     useEffect(()=>{
-        setExemplo(ListaProdutos)
-      console.log("Use-Effect que será renderizado o objeto ou componente ou elemento que está no array de depenências sofrer atualização.");
-    },[count]);
+        
+        fetch("http://localhost:5000/produtos/",{
+            method:"GET",
+            headers:{
+                'Content-type':'application/json',
+            },
+        })
+        .then((response)=>response.json())
+        .then((data)=>{
+            setListaProdutoLocal(data);
+        })
+        .catch((err)=>console.log(err));
+
+
+    },[])
+
+    // useEffect(()=>{
+    //     setExemplo(ListaProdutos)
+    //   console.log("Use-Effect que será renderizado o objeto ou componente ou elemento que está no array de depenências sofrer atualização.");
+    // },[count]);
 
     return(
         <>
@@ -31,7 +48,7 @@ export default function Produtos(){
                         </tr>
                     </thead>
                     <tbody>
-                        {ListaProdutos.map((produto,index) =>(
+                        {listaProdutoLocal.map((produto,index) =>(
                             <tr key = {index}>
                                 <td>{produto.id}</td>
                                 <td>{produto.nome}</td>

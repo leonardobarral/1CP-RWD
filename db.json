@@ -7,6 +7,7 @@
         {"id": 5, "nome": "Mousepad", "desc": "Mousepad Gamer - 80x30cm.", "preco": 50, "img":"https://picsum.photos/100/100"},
         {"id": 6, "nome": "Cadeira", "desc": "Cadeira Gamer - 180°.", "preco": 1000, "img":"https://picsum.photos/100/100"},
         {"id": 7, "nome": "Gabinete", "desc": "Gabinete Gamer - Vidro Temperado.", "preco": 500, "img":"https://picsum.photos/100/100"},
-        {"id": 8, "nome": "Placa de Vídeo", "desc": "Placa de Vídeo - 8GB.", "preco": 2000, "img":"https://picsum.photos/100/100"}
+        {"id": 8, "nome": "Placa de Vídeo", "desc": "Placa de Vídeo - 8GB.", "preco": 2000, "img":"https://picsum.photos/100/100"},
+        {"id": 9, "nome": "Placa de som", "desc": "Placa de som.", "preco": 9000, "img":"https://picsum.photos/100/100"}
     ]
 }
