@@ -65,17 +65,19 @@ export default function EditarProduto(){
         // ListaProdutos.splice(indice,1,produto);
         // alert(`Produto editado com sucesso!`);
         
-        fetch("http://127.0.0.1:5000/api/produto/"+id,{
-            method:"POST",
+        fetch(`http://localhost:5000/produtos/${id}`,{
+            method:"PUT",
             headers:{
                 'Content-type':'application/json',
-            }
+            },
+            body:JSON.stringify(produto),
         })
         .then((response)=>response.json())
-            .then((data)=>{
-                console.log(data);
-            })
-            .catch((err)=>console.log(err))
+
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch((err)=>console.log(err))
         navegacao("/produtos"); 
     }
 

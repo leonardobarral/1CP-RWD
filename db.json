@@ -4,7 +4,7 @@
       "id": 1,
       "nome": "Teclado",
       "desc": "Teclado 102 Teclas - Mecânico.",
-      "preco": 200,
+      "preco": "20000",
       "img": "https://picsum.photos/100/100"
     },
     {
