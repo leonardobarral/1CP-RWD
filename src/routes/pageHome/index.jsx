@@ -3,7 +3,8 @@ export default function Home(){
     return(
         <>
             <main>
-                <h1>HOME</h1>
+                <h1>COMPONETE HOME</h1>
+                <img src="/produtos.jpg" alt="Produtos"/>
             </main>
         </>
     );

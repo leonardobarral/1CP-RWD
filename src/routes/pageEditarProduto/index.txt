@@ -21,15 +21,28 @@ export default function EditarProduto(){
 
     useEffect(()=>{
         
-        fetch("http://localhost:5000/produtos/"+id,{
-            method:"GET",
+        fetch("http://127.0.0.1:5000/api/produto/"+id,{
+            method:"POST",
             headers:{
                 'Content-type':'application/json',
-            }
+            },
+            body:JSON.stringify({
+                "credenciais":{
+                "user":"rm551472",
+                "password":"041093"}       
+            })
         })
         .then((response)=>response.json())
-        .then((data)=>{            
-            setProduto(data);
+        .then((data)=>{
+            const newdata = {
+                "id": data[0][0],
+                "nome" :data[0][1],
+                "desc" : data[0][2],
+                "preco" : data[0][3],
+                "img" : data[0][4]
+            };
+            
+            setProduto(newdata);
         })
         .catch((err)=>console.log(err));
 
@@ -65,17 +78,32 @@ export default function EditarProduto(){
         // ListaProdutos.splice(indice,1,produto);
         // alert(`Produto editado com sucesso!`);
         
-        fetch("http://127.0.0.1:5000/api/produto/"+id,{
+        fetch("http://127.0.0.1:5000/api/produto/atualiza",{
             method:"POST",
             headers:{
                 'Content-type':'application/json',
-            }
+            },
+            body:JSON.stringify({
+                "credenciais":{
+                "user":"rm551472",
+                "password":"041093"},
+                "dado":{
+                    "id": id,
+                    "nome":produto.nome,
+                    "descricao":produto.desc,
+                    "preco":produto.preco,
+                    "url":produto.img
+                }      
+            })
         })
         .then((response)=>response.json())
             .then((data)=>{
                 console.log(data);
             })
             .catch((err)=>console.log(err))
+
+
+        
         navegacao("/produtos"); 
     }
 

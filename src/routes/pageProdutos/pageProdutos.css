@@ -9,3 +9,6 @@ tbody tr td{
     width: max-content;
     padding: 0 10px;
 }
+img{
+    width: 9rem;
+}
