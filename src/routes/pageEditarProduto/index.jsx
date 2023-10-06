@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { ListaProdutos } from "../../components/listaProdutos";
 import { useEffect, useState } from "react";
-
+import "./pageEditarProduto.scss";
 
 export default function EditarProduto(){
    
@@ -90,16 +90,16 @@ export default function EditarProduto(){
     // <h1>EDITANDO PRODUTO</h1>
     return(
         <>  
-            <div>
+            <div className="formAtualisacao">
                 <h1>Editar Produto</h1>
-                <div>
+                <div className="produtoAtual">
                     <p>Nome : {produto.nome}</p>
                     <p>Desc : {produto.desc}</p>
                     <p>Preço : {produto.preco}</p>
                 </div>
-                <div>
+                <div className="novoProdutoForm">
                     <form onSubmit={handleSubmit}>
-                        <fieldset>
+                        <fieldset >
                                 <legend>Produto Selecionado</legend>
                                 <input type="hidden" name="id" value={produto.id}/>
                             <div>

@@ -11,7 +11,7 @@
       "id": 2,
       "nome": "Mouse",
       "desc": "Mouse Gamer - 3200 DPI.",
-      "preco": 100,
+      "preco": "10000",
       "img": "https://picsum.photos/100/100"
     },
     {
@@ -62,21 +62,6 @@
       "desc": "Placa de som.",
       "preco": 9000,
       "img": "https://picsum.photos/100/100"
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
     }
   ]
 }

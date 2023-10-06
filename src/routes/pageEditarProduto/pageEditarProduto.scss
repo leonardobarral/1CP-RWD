@@ -1,0 +1,42 @@
+$text-color:#291414;
+$prod-color:#4e80ac7d;
+$back-color:#e3dbdb;
+$familiaDaFonte:Arial, Helvetica, sans-serif;
+$tamanhoFonte:1.5rem;
+$estiloBordas:solid 2px #ccc;
+
+.formAtualisacao{
+    background-color: $back-color;
+    color: $text-color;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    // align-items: center;
+    
+    .produtoAtual{
+        padding-left: 20%;
+        background-color: $prod-color;
+        box-sizing: border-box;
+        margin: 1rem;
+        position: relative;
+    }   
+    
+    .novoProdutoForm{
+        position: relative;
+        display: flex;
+        height: 12rem;
+        box-sizing: border-box;
+        background-color: $prod-color;
+        margin: 1rem;
+        align-items: center;
+        padding: 0.5rem;
+        form{
+            width: 100%;
+            height: 100%;
+            
+        }
+        
+    }
+
+}
